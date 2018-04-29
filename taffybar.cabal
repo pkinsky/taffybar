@@ -10,14 +10,14 @@ build-type: Simple
 cabal-version: >=1.10
 tested-with: GHC == 7.10.3, GHC == 8.0.2, GHC == 8.2.2
 homepage: http://github.com/taffybar/taffybar
-data-files: taffybar.css
+data-files:
+  taffybar.css
+  icons/*.svg
 extra-source-files:
   README.md
   CHANGELOG.md
   taffybar.hs.example
   dbus-xml/org.mpris.MediaPlayer2.Player.xml
-
-
 description:
   Taffybar is a gtk+3 (through gtk2hs) based desktop information bar, intended
   primarily for use with XMonad, though it can also function alongside other EWMH
@@ -50,6 +50,7 @@ library
                , gi-gdkx11
                , gi-glib
                , gi-gtk
+               , github
                , glib
                , gtk-sni-tray >= 0.1.1.0
                , gtk-strut >= 0.1.2.0
@@ -78,6 +79,7 @@ library
                , tuple >= 0.3.0.2
                , unix
                , utf8-string
+               , vector
                , xdg-basedir >= 0.2 && < 0.3
                , xml
                , xml-helpers
@@ -131,6 +133,7 @@ library
                  , System.Taffybar.Widget.Generic.PollingGraph
                  , System.Taffybar.Widget.Generic.PollingLabel
                  , System.Taffybar.Widget.Generic.VerticalBar
+                 , System.Taffybar.Widget.GitHubNotifications
                  , System.Taffybar.Widget.Layout
                  , System.Taffybar.Widget.MPRIS
                  , System.Taffybar.Widget.MPRIS2
